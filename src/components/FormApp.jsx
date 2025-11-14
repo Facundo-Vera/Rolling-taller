@@ -10,7 +10,13 @@ const FormApp = () => {
   const [inputSintomas, setInputSintomas] = useState("");
 
   const [turno, setTurno] = useState([]);
+  
+  
+  //~falta un estado que guarde los turnos si no existe ninguno en el localStorage 
+  //~ limpiar inputs al guardar/cargar  un nuevo turno 
+  
 
+  //^guarda turnos cada vez que cambien 
   useEffect(() => {
     localStorage.setItem("turno", JSON.stringify(turno));
   },[turno]);

@@ -1,4 +1,13 @@
+import { useEffect, useState } from "react";
+
 const FormApp = () => {
+  const [inputMascota, setInpuntMascota] = useState("sadas");
+  const [inputDuenio, setInputDuenio] = useState("sda");
+  const [inputFecha, setInputFecha] = useState("dasda");
+  const [inputHora, setInputHora] = useState("asdas");
+  const [inputSintomas, setInputSintomas] = useState("asdas");
+
+
   return (
     <div>
     <form>
@@ -11,7 +20,8 @@ const FormApp = () => {
           className="form-control"
           required
           id="name"
-          aria-describedby="emailHelp"
+          aria-describedby="emailHelp" 
+          value={inputMascota}
         />
         
       </div>

@@ -17,12 +17,14 @@ const FormApp = () => {
   // Busca si en el localStorage existe algo guardado bajo la clave "turno".
   // Si encuentra datos → los convierte de texto a objeto con JSON.parse.
   // Y actualiza el estado: setTurno(...).
+
   useEffect(() => {
     const stored = localStorage.getItem("turno");
     if (stored) {
       setTurno(JSON.parse(stored));
     }
   }, []);
+
 
   //~ limpiar inputs al guardar/cargar  un nuevo turno
 
@@ -31,16 +33,16 @@ const FormApp = () => {
     localStorage.setItem("turno", JSON.stringify(turno));
   }, [turno]);
 
-  const nuevoTurno = {
+  
+  const submit = (e) => {
+    e.preventDefault();
+    const nuevoTurno = {
     mascota: inputMascota,
     duenio: inputDuenio,
     fecha: inputFecha,
     hora: inputHora,
     sintomas: inputSintomas,
   };
-  const submit = (e) => {
-    e.preventDefault();
-
     setTurno([...turno, nuevoTurno]);
     setInputMascota("");
     setInputDuenio("");

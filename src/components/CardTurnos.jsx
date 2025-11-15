@@ -1,7 +1,7 @@
 import React from "react";
 
-const CardTurnos = (nuevoTurno) => {
-  const { mascota, duenio, fecha, hora, sintomas } = nuevoTurno;
+const CardTurnos = ({paciente}) => {
+  const { mascota, duenio, fecha, hora, sintomas } = paciente;
   return (
     <div>
       <article>
@@ -39,7 +39,6 @@ const CardTurnos = (nuevoTurno) => {
             id="sintoma"
             placeholder="describir sintomas"
             value={sintomas}
-            onChange={(e) => setInputSintomas(e.target.value)}
           />
         </div>
         </form>

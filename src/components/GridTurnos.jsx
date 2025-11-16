@@ -1,13 +1,14 @@
-// import CardTurnos from "./CardTurnos";
+import CardTurnos from "./CardTurnos";
+import "../css/grid.css";
 
-// const GridTurnos = ({ nuevoTurno }) => {
-//   return (
-//     <div>
-//       {nuevoTurno.map((paciente) => (
-//         <CardTurnos paciente={paciente}  />
-//       ))}
-//     </div>
-//   );
-// };
+const GridTurnos = ({ turno}) => {
+  return (
+    <div className="listado-turnos gap-5">
+      {turno.map((paciente,index) => (
+        <CardTurnos paciente={paciente}  key={index}/>
+      ))}
+    </div>
+  );
+};
 
-// export default GridTurnos;
+export default GridTurnos;

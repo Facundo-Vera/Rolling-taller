@@ -1,47 +1,46 @@
 import React from "react";
+import "../css/card.css"
 
 const CardTurnos = ({paciente}) => {
   const { mascota, duenio, fecha, hora, sintomas } = paciente;
   return (
     <div>
-      <article>
-        <header>
+      <article  className="tarjeta">
+        <header className="head">
           <h1> Mascota: {mascota} </h1>
           <h2>Dueño: {duenio}</h2>
         </header>
         <div>
             <form>
-            <div className="mb-3 col-6">
-          <label className="form-label">Fecha</label>
+            <div className="mb-3 col-6 d-flex align-items-center m-2" >
+          <label className="form-label me-4 ">Fecha:</label>
           <input
-            type="date"
-            className="form-control"
+            type="text"
+            className="form-control "
             placeholder="dd/mm/yyy"
             id="fecha"
             value={fecha}
           />
         </div>
-        <div className="mb-3 col-6" >
-          <label className="form-label">Hora</label>
+        <div className="mb-3 col-6  d-flex align-items-center m-2"  >
+          <label className="form-label me-4 ">Hora:</label>
           <input
-            type="time"
-            className="form-control"
+            type="text"
+            className="form-control m-1"
             placeholder="dd/mm/yyy"
             id="hora"
             value={hora}
           />
         </div>
-        <div className="mb-3">
-          <label className="form-label">Sintomas</label>
-          <input
-            type="text"
-            className="form-control"
-            id="sintoma"
-            placeholder="describir sintomas"
-            value={sintomas}
-          />
+        <div className="mb-3  d-flex align-items-center m-2">
+          <label className="form-label me-2">Sintomas:</label>
+          <textarea name="" id="" value={sintomas}></textarea>
+        </div>
+        <div className="d-flex justify-content-end">
+          <button className="btn btn-danger">Borrar Turno</button>
         </div>
         </form>
+
         </div>
       </article>
     </div>

@@ -1,0 +1,11 @@
+.listado-turnos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+ margin: 50px;
+    padding: 50px;
+      background-color:#aa9fe4;
+      border-radius: 40px;
+          border: solid 3px #2b2c34;
+}

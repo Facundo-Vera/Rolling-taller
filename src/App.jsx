@@ -1,15 +1,41 @@
 import FormApp from "./components/FormApp";
+import GridTurnos from "./components/GridTurnos";
+import { useEffect,useState } from "react";
+
 import "./css/app.css";
 
 const App = () => {
+   const [turno, setTurno] = useState([]);
+
+  //~falta un estado que guarde los turnos si no existe ninguno en el localStorage
+
+  useEffect(() => {
+    const stored = localStorage.getItem("turno");
+    if (stored) {
+      setTurno(JSON.parse(stored));
+    }
+  }, []);
+
+  //~ limpiar inputs al guardar/cargar  un nuevo turno
+
+  //^guarda turnos cada vez que cambien
+  useEffect(() => {
+    localStorage.setItem("turno", JSON.stringify(turno));
+  }, [turno]); 
+
+  const cargarTurno=(nuevoTurno)=>{setTurno([...turno, nuevoTurno])};
   return (
-    <div>
+    <main>
       <h1 className="text-center m-5">Administrador pacientes de veterinaria</h1>
       <div className="contenedor">
-        <p>Llenar el formulario para crear una cita</p>
-        <FormApp />
+        <div className="contenedor-2"></div>
+        <h2>Llenar el formulario para crear una cita</h2>
+        <FormApp cargarTurno={cargarTurno} />
       </div>
-    </div>
+      <div>
+        <GridTurnos turno={turno} />
+      </div>
+    </main>
   );
 };
 

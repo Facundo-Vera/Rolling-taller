@@ -1,9 +1,28 @@
 
 .formulario{
-    background-color: #e3f2fd;
+    background-color:#d0c7fc;
+
   
 }
 
 .form-label{
     font-weight: 600;
 }
+.boton {
+    height: 40px;
+    margin-left: 10px;
+  background-color: #6246ea;
+  /* border: 1px solid #bebebe; */
+   border: solid 2px #2b2c34;
+  border-radius: 7px;
+  color: white;
+   transition: transform 0.3s ease-in-out;
+}
+
+.boton:hover{
+    transform:scale(1.01) ;
+    transition: ease-in-out;
+      background-color: #5037cc;
+}
+
+

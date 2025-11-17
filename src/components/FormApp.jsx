@@ -68,6 +68,7 @@ const FormApp = ({cargarTurno}) => {
             <label className="form-label">Fecha</label>
             <input
               type="date"
+          min={new Date().toISOString().slice(0, 10)}
               className="form-control"
               placeholder="dd/mm/yyy"
               id="fecha"

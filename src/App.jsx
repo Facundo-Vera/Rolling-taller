@@ -5,23 +5,25 @@ import { useEffect,useState } from "react";
 import "./css/app.css";
 
 const App = () => {
-   const [turno, setTurno] = useState([]);
+   const [turno, setTurno] = useState(null);
 
   //~falta un estado que guarde los turnos si no existe ninguno en el localStorage
 
+  //
+
   useEffect(() => {
-    const stored = localStorage.getItem("turno");
-    if (stored) {
-      setTurno(JSON.parse(stored));
+    const stored = JSON.parse(localStorage.getItem("turno"))
+    if (stored.length > 0 ) {
+     setTurno(stored)
     }
   }, []);
 
   //~ limpiar inputs al guardar/cargar  un nuevo turno
 
   //^guarda turnos cada vez que cambien
-  useEffect(() => {
-    localStorage.setItem("turno", JSON.stringify(turno));
-  }, [turno]); 
+  // useEffect(() => {
+  //   localStorage.setItem("turno", JSON.stringify(turno));
+  // }, [turno]); 
 
   const cargarTurno=(nuevoTurno)=>{setTurno([...turno, nuevoTurno])};
   return (
@@ -33,7 +35,10 @@ const App = () => {
         <FormApp cargarTurno={cargarTurno} />
       </div>
       <div>
-        <GridTurnos turno={turno} />
+        {
+          turno  &&  <GridTurnos turno={turno} />
+        }
+        
       </div>
     </main>
   );

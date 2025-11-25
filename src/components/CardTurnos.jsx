@@ -20,6 +20,7 @@ const CardTurnos = ({paciente}) => {
             placeholder="dd/mm/yyy"
             id="fecha"
             value={fecha}
+            readOnly
           />
         </div>
         <div className="mb-3 col-6  d-flex align-items-center m-2"  >
@@ -30,14 +31,12 @@ const CardTurnos = ({paciente}) => {
             placeholder="dd/mm/yyy"
             id="hora"
             value={hora}
+            readOnly
           />
         </div>
         <div className="mb-3  d-flex align-items-center m-2">
           <label className="form-label me-2">Sintomas:</label>
-          <textarea name="" id="" value={sintomas}></textarea>
-        </div>
-        <div className="d-flex justify-content-end">
-          <button className="btn btn-danger">Borrar Turno</button>
+          <textarea name="" id="" value={sintomas} readOnly ></textarea>
         </div>
         </form>
 

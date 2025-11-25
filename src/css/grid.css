@@ -1,4 +1,5 @@
 .listado-turnos {
+  min-height: 500px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -8,4 +9,13 @@
       background-color:#aa9fe4;
       border-radius: 40px;
           border: solid 3px #2b2c34;
+}
+
+@media (max-width: 767px) {
+  .listado-turnos {
+    margin: 20px 10px; 
+    padding: 20px;
+    border-radius: 20px;
+    width: auto; 
+  }
 }

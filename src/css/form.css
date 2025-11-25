@@ -26,3 +26,10 @@
 }
 
 
+@media (max-width: 767px) {
+    .boton {
+        margin-left: 0;      
+        width: 100%; 
+        height: 40px;
+    }
+}

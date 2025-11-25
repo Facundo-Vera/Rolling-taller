@@ -37,7 +37,7 @@ const App = () => {
         <h2>Llenar el formulario para crear una cita</h2>
         <FormApp cargarTurno={cargarTurno} />
       </div>
-      <div>{turno && <GridTurnos turno={turno} />}</div>
+      <div>{turno.length > 0 && <GridTurnos turno={turno} />}</div>
     </main>
   );
 };

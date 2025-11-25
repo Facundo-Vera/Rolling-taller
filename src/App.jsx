@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import "./css/app.css";
 
 const App = () => {
-  const [turno, setTurno] = useState();
+  const [turno, setTurno] = useState([]);
 
   //~falta un estado que guarde los turnos si no existe ninguno en el localStorage
 
